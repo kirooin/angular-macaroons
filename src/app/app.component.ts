@@ -1,6 +1,7 @@
 import {Component} from '@angular/core';
 import {ProductType} from "./types/product.type";
 import {AdvantageType} from "./types/advantage.type";
+import {FormType} from "./types/form.type";
 
 @Component({
   selector: 'app-root',
@@ -46,16 +47,16 @@ export class AppComponent {
     },
   ]
 
-  public formValues = {
+  public formValues: FormType = {
     title: '',
     name: '',
     phone: ''
   }
 
-  protected companyPhone = '+375(29) 368 - 98 - 68';
-  protected companyInstUrl = 'https://www.instagram.com/theBestMacaroonsInTheWorld/'
+  protected companyPhone: string = '+375(29) 368 - 98 - 68';
+  protected companyInstUrl: string = 'https://www.instagram.com/theBestMacaroonsInTheWorld/'
 
-  showPresent = true;
+  protected showPresent: boolean = false;
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth'});
