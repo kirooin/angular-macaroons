@@ -3,9 +3,9 @@
     <div class="logo">
       <img src="assets/images/logo.png" alt="logo">
     </div>
-    <nav class="menu" id="menu">
+    <nav class="menu" [class.open]="menuIsOpen">
       <div class="close">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256" (click)="closeMenu()">
           <g fill="#821328" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
              font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -37,7 +37,7 @@
     <div class="number">
       {{ companyPhone }}
     </div>
-    <div class="burger" id="burger">
+    <div class="burger"  (click)="openMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
         <g fill="#821328" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
@@ -56,10 +56,8 @@
   <div class="container">
     <div class="main-info">
       <div class="main-info-title">
-        <h1>
           Мягкие французские
           пироженки Macaroons
-        </h1>
       </div>
       <div class="main-info-text">
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
@@ -171,9 +169,10 @@
       <input type="text" class="order-input" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
       <button class="btn order-btn" (click)="createOrder()">Оформить заказ</button>
     </div>
+    <img src="assets/images/straberry2.png" class="strawberry2" alt="strawberry">
+    <img src="assets/images/strawberry1.png" class="strawberry1" alt="strawberry">
   </div>
-  <img src="assets/images/straberry2.png" class="strawberry2" alt="strawberry">
-  <img src="assets/images/strawberry1.png" class="strawberry1" alt="strawberry">
+
 </section>
 
 <footer class="footer">
