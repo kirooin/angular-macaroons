@@ -60,7 +60,7 @@ export class AppComponent {
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth'});
-    this.closeMenu()
+    this.activeMenu()
   }
 
   public addToCart(product: ProductType, target: HTMLElement): void {
@@ -95,11 +95,7 @@ export class AppComponent {
 
   protected menuIsOpen: boolean = false;
 
-  protected openMenu(): void {
-    this.menuIsOpen = true;
-  }
-
-  protected closeMenu(): void {
-    this.menuIsOpen = false;
+  protected activeMenu(): void {
+    this.menuIsOpen = !this.menuIsOpen
   }
 }
