@@ -1,32 +1,24 @@
-import {Component} from '@angular/core';
+import {Component, OnInit} from '@angular/core';
 import {ProductType} from "./types/product.type";
 import {AdvantageType} from "./types/advantage.type";
 import {FormType} from "./types/form.type";
+import {ProductsService} from "./services/products.service";
+import {CartService} from "./services/cart.service";
 
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
   styleUrls: ['./app.component.scss']
 })
-export class AppComponent {
-  public products: ProductType[] = [
-    {
-      image: 'mac-red.png',
-      title: 'Макарун с малиной',
-    },
-    {
-      image: 'mac-yellow.png',
-      title: 'Макарун с манго',
-    },
-    {
-      image: 'mac-white.png',
-      title: 'Макарун с ванилью',
-    },
-    {
-      image: 'mac-green.png',
-      title: 'Макарун с фисташками',
-    },
-  ];
+export class AppComponent implements OnInit {
+  count: number = 0;
+  priceCart: number = 0;
+
+  constructor(private productsService: ProductsService,
+              private cartService: CartService,) {
+  }
+
+  public products: ProductType[] = [];
 
   public advantages: AdvantageType[] = [
     {
@@ -56,7 +48,7 @@ export class AppComponent {
   protected companyPhone: string = '+375(29) 368 - 98 - 68';
   protected companyInstUrl: string = 'https://www.instagram.com/theBestMacaroonsInTheWorld/'
 
-  protected showPresent: boolean = false;
+  protected showPresent: boolean = true;
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth'});
@@ -66,7 +58,8 @@ export class AppComponent {
   public addToCart(product: ProductType, target: HTMLElement): void {
     this.scrollTo(target)
     this.formValues.title = product.title.toUpperCase();
-
+    this.count++
+    this.priceCart += product.price;
   }
 
   public createOrder(): void {
@@ -97,5 +90,11 @@ export class AppComponent {
 
   protected activeMenu(): void {
     this.menuIsOpen = !this.menuIsOpen
+  }
+
+  ngOnInit(): void {
+    this.products = this.productsService.getProducts()
+    this.count = this.cartService.count
+
   }
 }

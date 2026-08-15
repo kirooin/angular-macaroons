@@ -131,7 +131,7 @@
             1шт.
           </div>
           <div class="products-item-advantages-price">
-            1,70 руб.
+            {{ product.price| number:'1.2-2' }} руб.
           </div>
         </div>
         <button class="btn products-btn" (click)="addToCart(product, orderMacaroon)">Заказать</button>
@@ -205,12 +205,13 @@
   </div>
 </footer>
 <div class="present-bottom" [class.show]="showPresent">
-  <div class="present">
-    <img src="assets/images/present.png" alt="present">
+  <div class="present" >
+    <span class="cart-icon" [attr.data-count]="count">
+    <img src="assets/images/cart.png" alt="present">
+    </span>
     <div class="window">
       <div class="text-window">
-        Оформите заказ
-        и получите подарок!
+        {{priceCart | number:'1.2-2'}} руб.
       </div>
 
     </div>
