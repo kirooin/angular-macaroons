@@ -1,0 +1,49 @@
+.advantage-items {
+  margin-top: 50px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.advantage-item {
+  height: 227px;
+}
+
+.advantage-item:hover .item-number {
+  background-color: #eba8b1;
+  color: #821328;
+}
+
+.item-number {
+  font-size: 60px;
+  font-family: GilroyExtraBold, sans-serif;
+  color: #FFFF;
+  border-radius: 50%;
+  background-color: #821328;
+  width: 70px;
+  height: 70px;
+  position: relative;
+  margin-bottom: 13px;
+  transition: all .5s ease;
+}
+
+.item-number-position {
+  position: absolute;
+  bottom: -17px;
+  left: 21px;
+}
+
+.item-title {
+  font-size: 20px;
+  font-family: GilroyExtraBold, sans-serif;
+  color: rgb(51, 25, 7);
+  margin-bottom: 20px;
+}
+
+.item-text {
+  font-size: 15px;
+  font-family: GilroyMedium, sans-serif;
+  color: rgb(51, 25, 7);
+  line-height: 1.333;
+  width: 222px;
+}

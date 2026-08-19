@@ -1,0 +1,20 @@
+<div class="products-item" >
+<div class="products-item-image">
+    <img src="assets/images/{{product.image}}" alt="Product macaroon ">
+  </div>
+  <div class="products-item-title">
+    {{ product.title }}
+  </div>
+  <div class="products-item-advantages">
+    <div class="products-item-advantages-text">
+      <div class="products-item-advantages-price-quantity">
+        1шт.
+      </div>
+      <div class="products-item-advantages-price">
+        {{ product.price| currency:'RUB': 'руб.' : '1.2-2' }} руб.
+      </div>
+    </div>
+    <button class="btn products-btn" coolBackgroundBtn  (click)="addProductToCart()">Заказать</button>
+  </div>
+  </div>
+

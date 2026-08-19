@@ -1,0 +1,55 @@
+.products-item {
+  border: 2px solid white;
+  border-radius: 20px;
+  position: relative;
+  height: 230px;
+  width: 263px;
+  text-align: center;
+
+}
+.products-item:hover .products-item-image {
+  transform: scale(1.1);
+}
+
+.products-item-image {
+  position: absolute;
+  left: calc(50% - 96px);
+  bottom: calc(50% + 49px);
+  transition: all .7s ease;
+}
+
+.products-item-title {
+  font-size: 18px;
+  font-family: TavolgaFree, sans-serif;
+  color: rgb(255, 255, 255);
+  text-align: center;
+  margin-top: 109px;
+  margin-bottom: 26px;
+
+}
+
+.products-item-advantages {
+  font-size: 15px;
+  font-family: GilroyRegular, sans-serif;
+  color: rgb(255, 255, 255);
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.products-item-advantages-text {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.products-item-advantages-price-quantity {
+  margin-bottom: 5px;
+}
+
+
+.products-btn {
+  width: 130px;
+  height: 50px;
+}
