@@ -5,7 +5,8 @@
     </div>
     <nav class="menu" [class.open]="menuIsOpen">
       <div class="close">
-        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256" (click)="activeMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256"
+             (click)="activeMenu()">
           <g fill="#821328" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
              stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
              font-weight="none" font-size="none" text-anchor="none" style="mix-blend-mode: normal">
@@ -37,7 +38,7 @@
     <div class="number">
       {{ companyPhone }}
     </div>
-    <div class="burger"  (click)="activeMenu()">
+    <div class="burger" (click)="activeMenu()">
       <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0,0,256,256">
         <g fill="#821328" fill-rule="nonzero" stroke="none" stroke-width="1" stroke-linecap="butt"
            stroke-linejoin="miter" stroke-miterlimit="10" stroke-dasharray="" stroke-dashoffset="0" font-family="none"
@@ -56,15 +57,15 @@
   <div class="container">
     <div class="main-info">
       <div class="main-info-title">
-          Мягкие французские
-          пироженки Macaroons
+        Мягкие французские
+        пироженки Macaroons
       </div>
       <div class="main-info-text">
         Побалуйте себя и своих близких самыми вкусными и ароматными домашними пироженками Macaroon!
       </div>
       <div class="main-info-action">
 
-        <button class="btn main-btn" (click)="scrollTo(macaroonsSection)">Выбрать макарун</button>
+        <button class="btn main-btn" coolBackgroundBtn (click)="scrollTo(macaroonsSection)">Выбрать макарун</button>
 
       </div>
 
@@ -94,20 +95,7 @@
       </div>
     </div>
 
-
-    <div class="advantage-items">
-      <div class="advantage-item" *ngFor="let advantage of advantages; let i = index">
-        <div class="item-number">
-          <div class="item-number-position">{{ i + 1 }}</div>
-        </div>
-        <div class="item-title">
-          {{ advantage.title }}
-        </div>
-        <div class="item-text">
-          {{ advantage.text }}
-        </div>
-      </div>
-    </div>
+    <advantages></advantages>
   </div>
 
 
@@ -118,27 +106,10 @@
     <div class="products-title">
       <h2>Выберите свой макарун</h2>
     </div>
-    <div class="products-item" *ngFor="let product of products; let i = index">
-      <div class="products-item-image">
-        <img src="assets/images/{{product.image}}" alt="Product macaroon {{i + 1}}">
-      </div>
-      <div class="products-item-title">
-        {{ product.title }}
-      </div>
-      <div class="products-item-advantages">
-        <div class="products-item-advantages-text">
-          <div class="products-item-advantages-price-quantity">
-            1шт.
-          </div>
-          <div class="products-item-advantages-price">
-            {{ product.price| number:'1.2-2' }} руб.
-          </div>
-        </div>
-        <button class="btn products-btn" (click)="addToCart(product, orderMacaroon)">Заказать</button>
-
-      </div>
-    </div>
-
+    <product *ngFor="let product of products; let i = index"
+             [product]="product"
+             (addToCartEvent)="addToCart(product, orderMacaroon)"
+    ></product>
   </div>
 </section>
 
@@ -167,7 +138,7 @@
 
       <input type="text" class="order-input" placeholder="Ваше имя" [(ngModel)]="formValues.name">
       <input type="text" class="order-input" placeholder="+375 (__) ___ - __ - __" [(ngModel)]="formValues.phone">
-      <button class="btn order-btn" (click)="createOrder()">Оформить заказ</button>
+      <button class="btn order-btn" coolBackgroundBtn (click)="createOrder()">Оформить заказ</button>
     </div>
     <img src="assets/images/straberry2.png" class="strawberry2" alt="strawberry">
     <img src="assets/images/strawberry1.png" class="strawberry1" alt="strawberry">
@@ -205,13 +176,13 @@
   </div>
 </footer>
 <div class="present-bottom" [class.show]="showPresent">
-  <div class="present" >
+  <div class="present">
     <span class="cart-icon" [attr.data-count]="count">
     <img src="assets/images/cart.png" alt="present">
     </span>
     <div class="window">
       <div class="text-window">
-        {{priceCart | number:'1.2-2'}} руб.
+        {{ priceCart | number:'1.2-2' }} руб.
       </div>
 
     </div>
