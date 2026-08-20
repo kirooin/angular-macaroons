@@ -47,3 +47,24 @@
   line-height: 1.333;
   width: 222px;
 }
+
+@media screen and (max-width: 1094px) {
+  .advantage-item {
+    justify-items: center;
+    text-align: center;
+  }
+
+  .advantage-items {
+    flex-wrap: wrap;
+    row-gap: 30px;
+    column-gap: 30px;
+    justify-content: center;
+  }
+}
+
+@media screen and (max-width: 394px) {
+  .advantage-items {
+    column-gap: 15px;
+  }
+
+}

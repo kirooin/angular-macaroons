@@ -11,7 +11,7 @@
         1шт.
       </div>
       <div class="products-item-advantages-price">
-        {{ product.price| currency:'RUB': 'руб.' : '1.2-2' }} руб.
+        {{ product.price| currency:'RUB': '' : '1.2-2' }} руб.
       </div>
     </div>
     <button class="btn products-btn" coolBackgroundBtn  (click)="addProductToCart()">Заказать</button>

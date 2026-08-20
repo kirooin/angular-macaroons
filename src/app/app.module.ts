@@ -8,6 +8,10 @@ import {ProductsService} from "./services/products.service";
 import { AdvantagesComponent } from './components/advantages/advantages.component';
 import { ProductComponent } from './components/product/product.component';
 import { CoolBackgroundBtnDirective } from './directives/cool-background-btn.directive';
+import { CustomTextPipe } from './pipes/custom-text.pipe';
+import { CustomPhoneNumberPipe } from './pipes/custom-phone-number.pipe';
+
+
 
 @NgModule({
   declarations: [
@@ -15,6 +19,8 @@ import { CoolBackgroundBtnDirective } from './directives/cool-background-btn.dir
     AdvantagesComponent,
     ProductComponent,
     CoolBackgroundBtnDirective,
+    CustomTextPipe,
+    CustomPhoneNumberPipe,
   ],
   imports: [
     BrowserModule,

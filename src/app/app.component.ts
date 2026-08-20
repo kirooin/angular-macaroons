@@ -26,14 +26,13 @@ export class AppComponent implements OnInit {
     phone: ''
   }
 
-  protected companyPhone: string = '+375(29) 368 - 98 - 68';
+  protected companyPhone: string = '375293689868';
   protected companyInstUrl: string = 'https://www.instagram.com/theBestMacaroonsInTheWorld/'
 
   protected showPresent: boolean = true;
 
   public scrollTo(target: HTMLElement): void {
     target.scrollIntoView({behavior: 'smooth'});
-    this.activeMenu()
   }
 
   public addToCart(product: ProductType, target: HTMLElement): void {
